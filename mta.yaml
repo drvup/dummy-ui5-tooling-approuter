@@ -1,0 +1,49 @@
+_schema-version: "3.2"
+ID: dummy-ui5-tooling-approuter
+version: 0.0.1
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+      - cp -R dummyUI5 buildDir
+modules:
+- name: dummy-ui5-tooling-approuter
+  type: html5
+  path: buildDir
+  parameters:
+    disk-quota: 128M
+    memory: 256M
+  build-parameters:
+    requires:
+      - name: approuter-build
+        #artifacts: ["*"]
+        #target-path: .
+    builder: zip
+    build-result: .
+  requires:
+    - name: uaa_dummyUI5_approuter
+    - name: dest_dummyUI5_approuter
+- name: approuter-build
+  type: html5
+  path: buildDir
+  build-parameters:
+    build-result: .
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+    - rm -R webapp # delete 'old' copied webapp folder 
+    - mv dist webapp # and replace with ui5-tooling results
+    supported-platforms: []
+resources:
+  - name: uaa_dummyUI5_approuter
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_dummyUI5_approuter
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service    
