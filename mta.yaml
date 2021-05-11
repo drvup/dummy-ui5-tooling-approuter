@@ -31,7 +31,7 @@ modules:
     builder: custom
     commands:
     - npm install
-    - npm run build
+    - npm run build:cf
     - rm -R webapp # delete 'old' copied webapp folder 
     - mv dist webapp # and replace with ui5-tooling results
     supported-platforms: []
