@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node node_modules/@sap/approuter/approuter.js",
+    "start": "node approuter-start.js",
     "start-local": "ui5 serve",
     "build": "ui5 build --all"
   },
@@ -30,6 +30,7 @@
     ]
   },
   "dependencies": {
-    "@sap/approuter": "^10.2.0"
+    "@sap/approuter": "^10.2.0",
+    "jwt-decode": "*"
   }
 }

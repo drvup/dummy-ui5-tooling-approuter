@@ -1,11 +1,11 @@
 {
-  "welcomeFile": "/index.html",
+  "welcomeFile": "/index2.html",
   "authenticationMethod": "route",
   "routes": [
     {
       "source": "^(.*)$",
       "target": "$1",
-      "service": "html5-apps-repo-rt",
+      "localDir": "webapp",
       "authenticationType": "xsuaa"
     }
   ]
