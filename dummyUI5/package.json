@@ -2,7 +2,6 @@
   "name": "dummy-ui5-tooling",
   "version": "1.0.0",
   "description": "",
-  "main": "webapp/index.html",
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
     "start-local": "ui5 serve",
