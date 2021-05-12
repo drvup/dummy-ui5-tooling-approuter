@@ -30,7 +30,7 @@ modules:
     build-result: .
     builder: custom
     commands:
-    - npm install
+    - npm install --production
     - npm run build:cf
     - rm -R webapp # delete 'old' copied webapp folder 
     - mv dist webapp # and replace with ui5-tooling results
