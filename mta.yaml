@@ -19,7 +19,7 @@ modules:
         #artifacts: ["*"]
         #target-path: .
     builder: zip
-    build-result: .
+    build-result: resources
   requires:
     - name: uaa_dummyUI5_approuter
     - name: dest_dummyUI5_approuter
@@ -30,7 +30,7 @@ modules:
     build-result: .
     builder: custom
     commands:
-    - npm install --production
+    - npm install
     - npm run build:cf
     - rm -R webapp # delete 'old' copied webapp folder 
     - mv dist webapp # and replace with ui5-tooling results
