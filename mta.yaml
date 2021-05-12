@@ -5,11 +5,11 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
-      - cp -R dummyUI5 buildDir
+      - cp -R dummyUI5 resources
 modules:
 - name: dummy-ui5-tooling-approuter
   type: html5
-  path: buildDir
+  path: .
   parameters:
     disk-quota: 128M
     memory: 256M
@@ -25,7 +25,7 @@ modules:
     - name: dest_dummyUI5_approuter
 - name: approuter-build
   type: html5
-  path: buildDir
+  path: resources
   build-parameters:
     build-result: .
     builder: custom

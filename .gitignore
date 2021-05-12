@@ -1,4 +1,4 @@
 node_modules
 dist
 mta_archives
-buildDir
+resources/
