@@ -2,3 +2,4 @@ node_modules
 dist
 mta_archives
 resources/
+default-env.json

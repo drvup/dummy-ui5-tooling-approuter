@@ -1,5 +1,5 @@
 {
-  "welcomeFile": "/index2.html",
+  "welcomeFile": "/index.html",
   "authenticationMethod": "route",
   "routes": [
     {
