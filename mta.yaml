@@ -37,7 +37,7 @@ modules:
     - mv dist webapp # and replace with ui5-tooling results
     supported-platforms: []
 - name: approuter-build
-  type: nodejs
+  type: html5
   path: resources
   build-parameters:
     build-result: .
@@ -45,6 +45,7 @@ modules:
     commands:
     - rm -R node_modules
     - npm install --production
+    supported-platforms: []
 resources:
   - name: uaa_dummyUI5_approuter
     parameters:
