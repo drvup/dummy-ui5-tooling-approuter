@@ -5,7 +5,7 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
-      - cp -R dummyUI5 resources
+      - cp -R dummyUI5 resources # this is only usefull on local devices, to protect your local folders
 modules:
 - name: dummy-ui5-tooling-approuter
   type: html5
@@ -43,8 +43,7 @@ modules:
     build-result: .
     builder: custom
     commands:
-    - rm -R node_modules
-    - npm install --production
+    - npm prune --production # remove all not necessary modules
     supported-platforms: []
 resources:
   - name: uaa_dummyUI5_approuter
